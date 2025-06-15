@@ -1,12 +1,18 @@
+using System.Linq;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Onglets")]
     [SerializeField] private GameObject mainmenu;
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject galerie;
+
+    [Header("GameObjects")]
+    [SerializeField] private GameObject[] locked;
+    [SerializeField] private GameObject[] illustrations; 
 
     //Jouer !
     public void Launch()
@@ -27,7 +33,7 @@ public class MenuManager : MonoBehaviour
     {
         mainmenu.SetActive(false);
         galerie.SetActive(true);
-
+        CanCheckIllu();
     }
 
     //Retour depuis menu Options ou Galerie
@@ -44,8 +50,32 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void CanCheckIllu()
+    {
+        for (int i = 0; i < GameManager.Instance.illustrationsFins.Length; i++)
+        {
+            if (!GameManager.Instance.illustrationsFins[i])
+            {
+                locked[i].SetActive(true);
+                illustrations[i].SetActive(false);
+            }
+            else
+            {
+                illustrations[i].SetActive(true);
+                locked[i].SetActive(false);
+            }
+        }
+    }
 
+    public void RetourIllustration()
+    {
 
+    }
+
+    public void CloseUpIllu()
+    {
+
+    }
 
     public void Start()
     {
