@@ -8,11 +8,13 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject galerie;
 
+    //Jouer !
     public void Launch()
     {
         SceneManager.LoadScene(1);
     }
 
+    //Activer menu Options
     public void Options()
     {
         mainmenu.SetActive(false);
@@ -20,6 +22,7 @@ public class MenuManager : MonoBehaviour
 
     }
     
+    //Activer menu Galerie
     public void Galerie()
     {
         mainmenu.SetActive(false);
@@ -27,6 +30,7 @@ public class MenuManager : MonoBehaviour
 
     }
 
+    //Retour depuis menu Options ou Galerie
     public void Return()
     {
         options.SetActive(false);
@@ -34,10 +38,14 @@ public class MenuManager : MonoBehaviour
         mainmenu.SetActive(true);
     }
 
+    //Quitter le jeu
     public void QuitGame()
     {
         Application.Quit();
     }
+
+
+
 
     public void Start()
     {
