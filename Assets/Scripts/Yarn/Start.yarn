@@ -9,8 +9,8 @@ feur: TU FAIS QUOI ^^
     <<jump Oui>>
 -> coubeh
     feur: hihi
+    <<FaceUpdate Manager "Monsi" "joyeux">>
     <<jump Non>>
-
 ===
 title: Oui
 position: -162,245
