@@ -11,10 +11,28 @@ namespace Yarn
         
         public enum Emotions
         {
-            joyeux,
+            blush,
+            coquette,
+            deg,
             enerve,
+            ennuye,
+            heureux,
+            nerveux,
+            normal,
+            super_ennuye,
+            super_heureux,
+            super_enerve,
+            sus,
             triste,
-            shy
+            sleep,
+            dedain,
+            choque,
+            worried,
+            shy,
+            tete,
+            agace,
+            rigolade,
+            pensif
         }
 
     }

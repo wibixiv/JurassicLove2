@@ -11,7 +11,8 @@ public class HeadDisplay : MonoBehaviour
     
     public List<CharacterEmotions> CharEmotions;
 
-    public Image image;
+    public Image imageLeft;
+    public Image imageRight;
 
     private void Start()
     {
@@ -28,8 +29,21 @@ public class HeadDisplay : MonoBehaviour
         CharacterEmotions.Emotions currentEmotion;
         if (Enum.TryParse(emotion, out currentEmotion))
         {
-            image.sprite = Dict[(name, currentEmotion)];
-            image.SetNativeSize();
+            if (name == "MonsiCalbar" || name == "MonsiPantalon")
+            {
+                imageRight.enabled = false;
+                imageLeft.enabled = true;
+                imageLeft.sprite = Dict[(name, currentEmotion)];
+                imageLeft.SetNativeSize();
+            }
+            else
+            {
+                imageLeft.enabled = false;
+                imageRight.enabled = true;
+                imageRight.sprite = Dict[(name, currentEmotion)];
+                imageRight.SetNativeSize();
+            }
+            
         }
         else
         {
