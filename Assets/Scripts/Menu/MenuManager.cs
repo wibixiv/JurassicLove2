@@ -9,10 +9,22 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject mainmenu;
     [SerializeField] private GameObject options;
     [SerializeField] private GameObject galerie;
+    [SerializeField] private RectTransform pageGalerie;
 
     [Header("GameObjects")]
     [SerializeField] private GameObject[] locked;
-    [SerializeField] private GameObject[] illustrations; 
+    [SerializeField] private GameObject[] illustrations;
+    [SerializeField] private GameObject boutonRetourIllu;
+    [SerializeField] private GameObject boutonPageDroite;
+    [SerializeField] private GameObject boutonPageGauche;
+
+    [Header("Animators")]
+    [SerializeField] private Animator[] animatorIllu;
+
+    public Animator activeAnimator;
+
+
+
 
     //Jouer !
     public void Launch()
@@ -69,12 +81,23 @@ public class MenuManager : MonoBehaviour
 
     public void RetourIllustration()
     {
+        activeAnimator.SetBool("Open", false);
+        boutonRetourIllu.SetActive(false);
 
     }
 
-    public void CloseUpIllu()
+    public void PageVersDroite()
     {
-
+        pageGalerie.localPosition = new Vector3(-116,0, 0);
+        boutonPageDroite.SetActive(false);
+        boutonPageGauche.SetActive(true);
+    }
+    
+    public void PageVersGauche()
+    {
+        pageGalerie.localPosition = new Vector3(614,0, 0);
+        boutonPageDroite.SetActive(true);
+        boutonPageGauche.SetActive(false);
     }
 
     public void Start()
@@ -82,6 +105,8 @@ public class MenuManager : MonoBehaviour
         mainmenu.SetActive(true);
         options.SetActive(false);
         galerie.SetActive(false);
+        boutonRetourIllu.SetActive(false);
+        boutonPageGauche.SetActive(false);
     }
 
 
