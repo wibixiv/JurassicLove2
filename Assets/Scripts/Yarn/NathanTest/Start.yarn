@@ -1,0 +1,27 @@
+﻿title: Start
+position: 0,0
+---
+feur: COUCOU CA MARCHE OU PAS LA
+<<FaceUpdate IlluManager "Yandere" "enerve">>
+<<BackgroundUpdate IlluManager "ethan">>
+quoi: CA MARCHE JE CROIS
+feur: TU FAIS QUOI ^^
+-> feur
+    feur: ^^
+    <<jump Oui>>
+-> coubeh
+    feur: hihi
+    <<FaceUpdate IlluManager "MonsiCalbar" "heureux">>
+    <<jump Non>>
+===
+title: Oui
+position: -162,245
+color: green
+---
+OUI
+===
+title: Non
+position: 261,209
+---
+non
+===
