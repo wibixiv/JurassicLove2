@@ -2,7 +2,7 @@
 position: 0,0
 ---
 feur: COUCOU CA MARCHE OU PAS LA
-<<FaceUpdate DialogManager "Yandere" "enerve">>
+<<FaceUpdate IlluManager "Yandere" "enerve">>
 quoi: CA MARCHE JE CROIS
 feur: TU FAIS QUOI ^^
 -> feur
@@ -10,7 +10,7 @@ feur: TU FAIS QUOI ^^
     <<jump Oui>>
 -> coubeh
     feur: hihi
-    <<FaceUpdate DialogManager "MonsiCalbar" "heureux">>
+    <<FaceUpdate IlluManager "MonsiCalbar" "heureux">>
     <<jump Non>>
 ===
 title: Oui

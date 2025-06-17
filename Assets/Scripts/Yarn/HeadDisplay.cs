@@ -43,7 +43,6 @@ public class HeadDisplay : MonoBehaviour
                 imageRight.sprite = Dict[(name, currentEmotion)];
                 imageRight.SetNativeSize();
             }
-            
         }
         else
         {
