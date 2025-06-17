@@ -2070,6 +2070,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589148131}
   m_CullTransparentMesh: 1
+--- !u!1 &604442273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604442275}
+  - component: {fileID: 604442274}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &604442274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604442273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a724800f9ce5b3c42b760e92feaaad9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData:
+    illuUnlocked: 000000000000000000000000
+  gameManager: {fileID: 1733018775}
+--- !u!4 &604442275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604442273}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2284.8044, y: 788.46545, z: -5.319579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &662667350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3357,6 +3404,9 @@ MonoBehaviour:
   - {fileID: 516902760}
   - {fileID: 668222582}
   activeAnimator: {fileID: 0}
+  playerData:
+    illuUnlocked: 000000000000000000000000
+  dataManager: {fileID: 604442274}
 --- !u!4 &1119669964
 Transform:
   m_ObjectHideFlags: 0
@@ -5338,7 +5388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65476ee4f17c35f43a3586d1b0bbd4d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  illustrationsFins: 010100000000000000000000
+  illuUnlocked: 010101000000000000000000
 --- !u!4 &1733018776
 Transform:
   m_ObjectHideFlags: 0
@@ -6612,3 +6662,4 @@ SceneRoots:
   - {fileID: 2090750406}
   - {fileID: 1416242996}
   - {fileID: 1733018776}
+  - {fileID: 604442275}
