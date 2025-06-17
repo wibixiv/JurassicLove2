@@ -3,9 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-    [Header("IllustrationsGalerie")]
-    public bool[] illustrationsFins; 
+    public bool[] illuUnlocked;
 
 
     public void Awake()

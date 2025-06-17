@@ -23,8 +23,8 @@ public class MenuManager : MonoBehaviour
 
     public Animator activeAnimator;
 
-
-
+    public PlayerData playerData;
+    public DataManager dataManager;
 
     //Jouer !
     public void Launch()
@@ -59,14 +59,15 @@ public class MenuManager : MonoBehaviour
     //Quitter le jeu
     public void QuitGame()
     {
+        dataManager.SaveGame();
         Application.Quit();
     }
 
     public void CanCheckIllu()
     {
-        for (int i = 0; i < GameManager.Instance.illustrationsFins.Length; i++)
+        for (int i = 0; i < GameManager.Instance.illuUnlocked.Length; i++)
         {
-            if (!GameManager.Instance.illustrationsFins[i])
+            if (!GameManager.Instance.illuUnlocked[i])
             {
                 locked[i].SetActive(true);
                 illustrations[i].SetActive(false);
@@ -102,6 +103,7 @@ public class MenuManager : MonoBehaviour
 
     public void Start()
     {
+        dataManager.LoadGame();
         mainmenu.SetActive(true);
         options.SetActive(false);
         galerie.SetActive(false);
