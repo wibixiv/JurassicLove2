@@ -3,6 +3,7 @@ position: 0,0
 ---
 feur: COUCOU CA MARCHE OU PAS LA
 <<FaceUpdate IlluManager "Yandere" "enerve">>
+<<BackgroundUpdate IlluManager "ethan">>
 quoi: CA MARCHE JE CROIS
 feur: TU FAIS QUOI ^^
 -> feur
