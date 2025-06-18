@@ -948,10 +948,13 @@ MonoBehaviour:
   imageRight: {fileID: 37448439}
   imageTransformRight: {fileID: 37448438}
   leftImageXPosition: -790
+  leftImageXPositionPassive: -990
   leftImageYPosition: -180
   rightImageXPosition: 615
+  rightImageXPositionPassive: 815
   rightImageYPosition: -171
   tweenTime: 1
+  passiveColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
 --- !u!4 &1558351933
 Transform:
   m_ObjectHideFlags: 0

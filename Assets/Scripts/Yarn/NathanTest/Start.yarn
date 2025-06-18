@@ -3,9 +3,12 @@ position: 0,0
 ---
 feur: COUCOU CA MARCHE OU PAS LA
 <<FaceUpdate IlluManager "Yandere" "enerve">>
-<<BackgroundUpdate IlluManager "ethan" "Oui">>
+//<<BackgroundUpdate IlluManager "ethan" "Oui">>
 quoi: CA MARCHE JE CROIS
+<<FaceUpdate IlluManager "MonsiCalbar" "heureux">>
 feur: TU FAIS QUOI ^^
+<<FaceUpdate IlluManager "Yandere" "enerve">>
+quoi: JE SAIS PAS
 -> feur
     feur: ^^
     <<jump Oui>>

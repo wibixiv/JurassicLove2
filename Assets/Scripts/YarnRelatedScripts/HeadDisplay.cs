@@ -18,12 +18,18 @@ public class HeadDisplay : MonoBehaviour
     public RectTransform imageTransformRight;
 
     [SerializeField] private int leftImageXPosition;
+    [SerializeField] private int leftImageXPositionPassive;
     [SerializeField] private int leftImageYPosition;
     [SerializeField] private int rightImageXPosition;
+    [SerializeField] private int rightImageXPositionPassive;
     [SerializeField] private int rightImageYPosition;
     [SerializeField] private int tweenTime;
+    [SerializeField] private Color passiveColor;
 
     private string lastPerso;
+    private string leftPerso;
+    private string rightPerso;
+    private Ease _ease = Ease.OutCubic;
 
     private void Start()
     {
@@ -53,35 +59,44 @@ public class HeadDisplay : MonoBehaviour
             {
                 if (name == "MonsiCalbar" || name == "MonsiPantalon")
                 {
-                    imageRight.enabled = false;
-                    imageLeft.enabled = true;
-                    imageLeft.sprite = sprite;
-                    imageLeft.SetNativeSize();
-                    if (name != lastPerso)
+                    if (leftPerso != name)
                     {
-                        imageLeft.color = new Color(1, 1, 1, 0);
-                        imageTransformLeft.position = new Vector3(imageTransformLeft.position.x - 200,
-                            imageTransformLeft.position.y, 0);
-                        imageTransformLeft.DOLocalMove(new Vector3(leftImageXPosition,
-                            leftImageYPosition, 0), tweenTime).SetEase(Ease.OutCubic);
-                        imageLeft.DOFade(1, tweenTime);
+                        leftPerso = name;
+                        imageLeft.sprite = sprite;
+                        imageLeft.SetNativeSize();
+                        if (name != lastPerso)
+                        {
+                            leftImageComing();
+                        }
+                    }
+                    else
+                    {
+                        if (name != lastPerso)
+                        {
+                            switchTalker();
+                        }
                     }
                 }
                 else
                 {
-                    imageLeft.enabled = false;
-                    imageRight.enabled = true;
-                    imageRight.sprite = sprite;
-                    imageRight.SetNativeSize();
-                    if (name != lastPerso)
+                    if (rightPerso != name)
                     {
-                        imageRight.color = new Color(1, 1, 1, 0);
-                        imageTransformRight.position = new Vector3(imageTransformRight.position.x + 200,
-                            imageTransformRight.position.y, 0);
-                        imageTransformRight.DOLocalMove(new Vector3(rightImageXPosition,
-                            rightImageYPosition, 0), tweenTime).SetEase(Ease.OutCubic);
-                        imageRight.DOFade(1, tweenTime);
+                        rightPerso = name;
+                        imageRight.sprite = sprite;
+                        imageRight.SetNativeSize();
+                        if (name != lastPerso)
+                        {
+                            rightImageComing();
+                        }
                     }
+                    else
+                    {
+                        if (name != lastPerso)
+                        {
+                            switchTalker();
+                        }
+                    }
+                    
                 }
 
                 lastPerso = name;
@@ -94,6 +109,86 @@ public class HeadDisplay : MonoBehaviour
         else
         {
             Debug.Log("Invalid Emotion");
+        }
+    }
+
+    private void leftImageComing()
+    {
+        imageLeft.color = new Color(1, 1, 1, 0);
+        imageTransformLeft.localPosition = new Vector3(leftImageXPosition - 200,
+            leftImageYPosition, 0);
+        imageTransformLeft.DOLocalMove(new Vector3(leftImageXPosition,
+            leftImageYPosition, 0), tweenTime).SetEase(Ease.OutCubic);
+        imageLeft.DOFade(1, tweenTime);
+        imageTransformRight.DOLocalMove(new Vector3(rightImageXPositionPassive, rightImageYPosition, 0), tweenTime)
+            .SetEase(Ease.OutCubic);
+        imageRight.DOColor(passiveColor, tweenTime).SetEase(_ease);
+        lastPerso = leftPerso;
+    }
+
+    private void rightImageComing()
+    {
+        imageRight.color = new Color(1, 1, 1, 0);
+        imageTransformRight.localPosition = new Vector3(rightImageXPosition + 200,
+            rightImageYPosition, 0);
+        imageTransformRight.DOLocalMove(new Vector3(rightImageXPosition,
+            rightImageYPosition, 0), tweenTime).SetEase(Ease.OutCubic);
+        imageRight.DOFade(1, tweenTime);
+        imageTransformLeft.DOLocalMove(new Vector3(leftImageXPosition, leftImageYPosition, 0), tweenTime)
+            .SetEase(_ease);
+        imageLeft.DOColor(Color.white, tweenTime).SetEase(_ease);
+        lastPerso = rightPerso;
+    }
+
+    [YarnCommand("leftCharaLeaving")]
+    public void leftCharaLeaving()
+    {
+        imageTransformLeft.DOLocalMove(new Vector3(leftImageXPosition - 200, leftImageYPosition, 0), tweenTime)
+            .SetEase(Ease.OutCubic);
+        imageLeft.DOFade(0, tweenTime);
+        if (lastPerso == leftPerso)
+        {
+            lastPerso = rightPerso;
+        }
+
+        leftPerso = "";
+    }
+    [YarnCommand("rightCharaLeaving")]
+    public void rightCharaLeaving()
+    {
+        imageTransformRight.DOLocalMove(new Vector3(rightImageXPosition - 200, rightImageYPosition, 0), tweenTime)
+            .SetEase(Ease.OutCubic);
+        imageRight.DOFade(0, tweenTime);
+        if (lastPerso == rightPerso)
+        {
+            lastPerso = leftPerso;
+        }
+
+        rightPerso = "";
+    }
+
+    [YarnCommand("switchTalker")]
+    public void switchTalker()
+    {
+        if (lastPerso == leftPerso)
+        {
+            imageTransformLeft.DOLocalMove(new Vector3(leftImageXPositionPassive, leftImageYPosition, 0), tweenTime)
+                .SetEase(Ease.OutCubic);
+            imageLeft.DOColor(passiveColor, tweenTime).SetEase(_ease);
+            imageTransformRight.DOLocalMove(new Vector3(rightImageXPosition, rightImageYPosition, 0), tweenTime)
+                .SetEase(_ease);
+            imageRight.DOColor(Color.white, tweenTime).SetEase(_ease);
+            lastPerso = rightPerso;
+        }
+        else if (lastPerso == rightPerso)
+        {
+            imageTransformRight.DOLocalMove(new Vector3(rightImageXPositionPassive, rightImageYPosition, 0), tweenTime)
+                .SetEase(Ease.OutCubic);
+            imageRight.DOColor(passiveColor, tweenTime).SetEase(_ease);
+            imageTransformLeft.DOLocalMove(new Vector3(leftImageXPosition, leftImageYPosition, 0), tweenTime)
+                .SetEase(_ease);
+            imageLeft.DOColor(Color.white, tweenTime).SetEase(_ease);
+            lastPerso = leftPerso;
         }
     }
 }
