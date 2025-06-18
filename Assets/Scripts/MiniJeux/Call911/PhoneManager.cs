@@ -1,31 +1,34 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class PhoneManager : MonoBehaviour
+namespace MiniJeux.Call911
 {
-    public bool isOnPhone = true;
-    
-    [SerializeField] private float offPosY;
-    [SerializeField] private float onPosY;
-    [SerializeField] private float moveDuration;
-    
-    public void PressOnOffButton()
+    public class PhoneManager : MonoBehaviour
     {
-        if (isOnPhone) TurnOff();
-        else TurnOn();
-    }
+        public bool isOnPhone = true;
     
-    void TurnOff()
-    {
-        isOnPhone = false;
-        GetComponent<SpriteRenderer>().color = Color.black;
-        transform.DOMove(new Vector3(transform.position.x, offPosY, 0), moveDuration).SetEase(Ease.OutQuint);
-    }
+        [SerializeField] private float offPosY;
+        [SerializeField] private float onPosY;
+        [SerializeField] private float moveDuration;
     
-    void TurnOn()
-    {
-        isOnPhone = true;
-        GetComponent<SpriteRenderer>().color = Color.blue;
-        transform.DOMove(new Vector3(transform.position.x, onPosY, 0), moveDuration).SetEase(Ease.OutQuint);
+        public void PressOnOffButton()
+        {
+            if (isOnPhone) TurnOff();
+            else TurnOn();
+        }
+    
+        void TurnOff()
+        {
+            isOnPhone = false;
+            GetComponent<SpriteRenderer>().color = Color.black;
+            transform.DOMove(new Vector3(transform.position.x, offPosY, 0), moveDuration).SetEase(Ease.OutQuint);
+        }
+    
+        void TurnOn()
+        {
+            isOnPhone = true;
+            GetComponent<SpriteRenderer>().color = Color.blue;
+            transform.DOMove(new Vector3(transform.position.x, onPosY, 0), moveDuration).SetEase(Ease.OutQuint);
+        }
     }
 }
