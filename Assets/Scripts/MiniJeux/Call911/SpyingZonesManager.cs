@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace MiniJeux.Call911
@@ -25,44 +24,57 @@ namespace MiniJeux.Call911
         // ReSharper disable Unity.PerformanceAnalysis
         IEnumerator WaitTillSpy()
         {
-            foreach (GameObject spying in spyingZones) spying.SetActive(false);
             yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
-            
             StartCoroutine(Spying(spyingZones[Random.Range(0, spyingZones.Count)]));
         }
     
         // ReSharper disable Unity.PerformanceAnalysis
         IEnumerator Spying(GameObject spying)
         {
-            spying.SetActive(true);
-
             switch (spying.name)
             {
                 case "Mirror":
                     Vector3 originalPos = spying.transform.position;
                     spying.transform.DOMove(new Vector3(4.08f, -3.1f, 0), marginTime);
                     yield return new WaitForSeconds(marginTime);
+                    
                     if (phoneManager.isOnPhone) Debug.Log("GameOver");
                     yield return new WaitForSeconds(Random.Range(minSpyingTime, maxSpyingTime));
                     spying.transform.DOMove(originalPos, 0.5f);
                     break;
 
                 case "Vent":
-                    spying.transform.DOShakePosition(marginTime);
+                    // Will be replaced by an animated sprite
+                    spying.transform.DOShakePosition(duration:marginTime, strength:0.2f);
                     yield return new WaitForSeconds(marginTime);
-                    if (phoneManager.isOnPhone)
-                        Debug.Log("GameOver");
-                    yield return new WaitForSeconds(Random.Range(minSpyingTime, maxSpyingTime));
-                    break;
-
-                case "Head":
-                    Transform sChild = spying.transform.GetChild(0);
-                    spying.SetActive(false);
-                    sChild.gameObject.SetActive(true);
-                    yield return new WaitForSeconds(marginTime);
-                    spying.SetActive(true);
+                    
+                    spying.GetComponent<SpriteRenderer>().color = Color.black;
                     if (phoneManager.isOnPhone) Debug.Log("GameOver");
                     yield return new WaitForSeconds(Random.Range(minSpyingTime, maxSpyingTime));
+                    spying.GetComponent<SpriteRenderer>().color = Color.red;
+                    break;
+
+                case "Feet":
+                    Transform sChild = spying.transform.GetChild(0);
+                    Vector3 originalFeetPos = spying.transform.position;
+                    Vector3 originalHeadPos = sChild.position;
+                    
+                    sChild.SetParent(null);
+
+
+                    spying.transform.DOMove(new Vector3(originalFeetPos.x, -2.3f, 0), marginTime);
+                    yield return new WaitForSeconds(marginTime);
+                    
+                    sChild.DOMove(new Vector3(originalHeadPos.x, 2.5f, 0), marginTime / 2);
+                    if (phoneManager.isOnPhone) Debug.Log("GameOver");
+                    yield return new WaitForSeconds(Random.Range(minSpyingTime, maxSpyingTime));
+
+
+                    sChild.DOMove(originalHeadPos, 0.2f);
+                    spying.transform.DOMove(originalFeetPos, 1f);
+                    yield return new WaitForSeconds(1f);
+                    
+                    sChild.SetParent(spying.transform);
                     break;
             }
             StartCoroutine(WaitTillSpy());
