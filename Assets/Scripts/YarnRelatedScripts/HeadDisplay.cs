@@ -32,6 +32,14 @@ public class HeadDisplay : MonoBehaviour
             Dict.Add((CharEmotion.name, CharEmotion.emotion), CharEmotion.sprite);
         }
     }
+
+    [YarnCommand("FaceReset")]
+    public void FaceReset()
+    {
+        lastPerso = "";
+        imageLeft.enabled = false;
+        imageRight.enabled = false;
+    }
     
     [YarnCommand("FaceUpdate")]
     public void FaceUpdate(string name, string emotion)
