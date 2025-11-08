@@ -1,30 +1,94 @@
 ﻿title: Start
-position: 0,0
+position: -180,-883
+color: red
 ---
-feur: COUCOU CA MARCHE OU PAS LA
-<<FaceUpdate IlluManager "Yandere" "enerve">>
-//<<BackgroundUpdate IlluManager "ethan" "Oui">>
-quoi: CA MARCHE JE CROIS
+Rubika, 10h, Cours de perspective
+//<<BackgroundUpdate IlluManager "ethan" "Matin_CoursPerspective">>
+<<jump Matin_CoursPerspective>>
+===
+title : Matin_CoursPerspective
+position: -181,-742
+color: red
+---
+<<FaceUpdate IlluManager "Zozo" "normal">>
+Zozo : Bien, alors aujourd’hui nous allons voir les ellipses…. j’espère que vous avez terminé et amené vos rendus de la dernière fois…… 
 <<FaceUpdate IlluManager "MonsiCalbar" "heureux">>
-feur: TU FAIS QUOI ^^
-<<FaceUpdate IlluManager "Yandere" "enerve">>
-quoi: JE SAIS PAS
--> feur
-    feur: ^^
-    <<jump Oui>>
--> coubeh
-    feur: hihi
-    <<FaceUpdate IlluManager "MonsiCalbar" "heureux">>
-    <<jump Non>>
+Monsi : Oh non ! J'ai oublié ma pers-
+<<FaceUpdate IlluManager "Zozo" "enerve">>
+Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’office, tu auras 0/20 !!
+-> Monsi Racaille
+    Monsi : C'est injuste !
+    Zozo : Eh bien Monsi, tu n’avais qu’à amener ton rendu, petit effronté…
+    Monsi : Vous êtes vraiment un sal-
+    Zozo : Monsi !... qu’est-ce qui te prend ?... je vais être obligée de-
+	Monsi : tu vas faire quoi, hein ??!!
+    Monsi : ah. 
+    Monsi : Ben...Je vais trouver autre chose à faire. 
+    -> Se balader un peu
+        <<jump Yandere_Matin_CoursPerspective>>
+    -> Rester dans le couloir
+        <<jump BadBoy_Matin_CoursPerspective>>
+-> Monsi Sage
+    Monsi : Bon, d'accord, je comprends, c'est mérité.
+    Zozo : C'est bien Monsi, je vois que tu restes respectueux malgré tout…
+    Monsi : (oui ben n'en fait pas trop quand même...)
+    Zozo : Bien...Prends place, s'il te plaît.
+    -> Aller près de la fenêtre
+        <<jump Nerd_Matin_CoursPerspective>>
+    -> Aller au premier rang
+        <<jump Tsundere_Matin_CoursPerspective>>
 ===
-title: Oui
-position: -162,245
-color: green
+title: BadBoy_Matin_CoursPerspective
+position: -492,-165
 ---
-OUI
+BadBoy_Matin_CoursPerspective
 ===
-title: Non
-position: 261,209
+title: Yandere_Matin_CoursPerspective
+position: 129,-179
 ---
-non
+Monsi décide de se rendre dans les backrooms de l'école. 
+Monsi : Peut-être que j’aurai un peu de calme là-bas...
+A l'écran, Monsi est choqué, il vient de tomber sur quelque chose de terrible. Le professeur Zozo a été assassiné ! *illu*
+Monsi : Professeur Zozo ?! Qu'est-ce qu'il s'est passé ici ?!
+Yandere : M-Monsi ?! Qu’est-ce que tu fais ici ?
+Monsi : Tu... Tu l'as tué ?!
+Yandere : C’est le professeur que tu détestes le plus, n’est-ce pas ?
+Monsi : Oui, mais c’est pas une raison de l’assassiner !
+Yandere : Je dirai pas ‘assassiner’, j’ai simplement résilié son abonnement à l’oxygène.
+Monsi : Non mais en plus j’ai stressé pour mon rendu pour rien mainten- NAN ! C’EST GRAVE SI DES GENS LE VOIENT !
+Yandere : Mais je l’ai fait pour toi..! Je ne voulais pas que tu passes plus de nuits sans sommeil à faire des rendus de perspective éreintants… =)
+Monsi : Ah bon ? AH- euh…. je sais pas trop quoi te dire, mais c’est super grave !!!
+Yandere : Tu comptes y faire quoi, Monsi ?
+-> Appeler la police
+    Monsi : Euh, je… je vais aux toilettes ! ^^’
+    Yandere : Tu n’appelles pas la police j’espère…
+    Monsi : Non non, haha… allez à tout de suite !
+    Bruit de porte qui claque, mini jeu police
+    -> Gagner le mini jeu
+        Monsi : Merci beaucoup !!
+        Yandere est en prison
+        Yandere : Monsi ..! comment as-tu pu me faire ça ?... enfin, pourquoi je m’inquiète… je te retrouverai… =)
+    -> Perdre le mini jeu
+        Yandere : Tu oses me faire ça ... Après tout ce que j'ai fait pour toi ?! 
+        Mort
+        <<backToMenu GameManager>>
+-> La couvrir
+    Monsi : Je te couvrirai ! De toute façon il était trop nul ce prof ! 
+    Yandere : Monsi…! Tu ferai ça pour moi ?
+    Monsi : Oui !...aussi parce que j’ai pas envie de finir en prison je te l’avouerai-
+    Yandere : Super !!! ça voudrai dire que tu me couvrirai si j’en tuais plus ?
+    Monsi : Euh, quoi-
+    Yandere : C’est génial ! Viens, je sais où le cacher !
+    Monsi : EUH- ok…?
+
+===
+title: Nerd_Matin_CoursPerspective
+position: -286,-169
+---
+Nerd_Matin_CoursPerspective
+===
+title: Tsundere_Matin_CoursPerspective
+position: -79,-173
+---
+Tsundere_Matin_CoursPerspective
 ===

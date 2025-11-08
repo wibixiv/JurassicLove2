@@ -331,6 +331,64 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &404564988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404564991}
+  - component: {fileID: 404564990}
+  - component: {fileID: 404564989}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &404564989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404564988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b30fc85dc7fd974fb94cc3024cf2b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &404564990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404564988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65476ee4f17c35f43a3586d1b0bbd4d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  illuUnlocked: 
+--- !u!4 &404564991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404564988}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 251.76555, y: -22.177755, z: -236.24112}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +536,10 @@ PrefabInstance:
     - target: {fileID: 2958262985454349539, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958262986446477828, guid: 52571f68872914e24837210513edea1d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2958262986446477831, guid: 52571f68872914e24837210513edea1d, type: 3}
       propertyPath: m_Sprite
@@ -948,13 +1010,13 @@ MonoBehaviour:
   imageRight: {fileID: 37448439}
   imageTransformRight: {fileID: 37448438}
   leftImageXPosition: -790
-  leftImageXPositionPassive: -990
+  leftImageXPositionPassive: 0
   leftImageYPosition: -180
   rightImageXPosition: 615
-  rightImageXPositionPassive: 815
+  rightImageXPositionPassive: 0
   rightImageYPosition: -171
   tweenTime: 1
-  passiveColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+  passiveColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1558351933
 Transform:
   m_ObjectHideFlags: 0
@@ -1077,3 +1139,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 496855334}
   - {fileID: 1558351933}
+  - {fileID: 404564991}
