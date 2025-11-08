@@ -1005,6 +1005,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8497c020660dbdd4c891017b077f4490, type: 2}
   - {fileID: 11400000, guid: 20c771fc858358c4283cfd5ae6bee0b3, type: 2}
   - {fileID: 11400000, guid: 1cb54d0a482adee4b811b0d7d9f5d6da, type: 2}
+  - {fileID: 11400000, guid: cd2b60693a5e6aa439bedbf463b3b239, type: 2}
+  - {fileID: 11400000, guid: cf0c32d6f9e9be0489d774f228ea2908, type: 2}
   imageLeft: {fileID: 1204029163}
   imageTransformLeft: {fileID: 1204029162}
   imageRight: {fileID: 37448439}
@@ -1046,6 +1048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list:
   - {fileID: 11400000, guid: 848266022beb8e64a85d43affaf976e9, type: 2}
+  - {fileID: 11400000, guid: 2760151fc4771084aaa6bb27d5c06f39, type: 2}
   BackgroundImage: {fileID: 702195650}
   BlackImage: {fileID: 1687842068}
   DialogueRunner: {fileID: 478604021}
