@@ -61,6 +61,7 @@ public class HeadDisplay : MonoBehaviour
                 {
                     if (leftPerso != name)
                     {
+                        imageLeft.enabled = true;
                         leftPerso = name;
                         imageLeft.sprite = sprite;
                         imageLeft.SetNativeSize();
@@ -81,6 +82,7 @@ public class HeadDisplay : MonoBehaviour
                 {
                     if (rightPerso != name)
                     {
+                        imageRight.enabled = true;
                         rightPerso = name;
                         imageRight.sprite = sprite;
                         imageRight.SetNativeSize();

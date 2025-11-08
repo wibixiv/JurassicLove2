@@ -3,7 +3,7 @@ position: -180,-883
 color: red
 ---
 Rubika, 10h, Cours de perspective
-//<<BackgroundUpdate IlluManager "ethan" "Matin_CoursPerspective">>
+<<BackgroundUpdate IlluManager "ethan" "Matin_CoursPerspective">>
 <<jump Matin_CoursPerspective>>
 ===
 title : Matin_CoursPerspective
