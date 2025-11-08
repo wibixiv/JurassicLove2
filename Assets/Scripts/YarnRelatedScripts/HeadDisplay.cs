@@ -18,21 +18,19 @@ public class HeadDisplay : MonoBehaviour
     public RectTransform imageTransformRight;
 
     [SerializeField] private int leftImageXPosition;
-    [SerializeField] private int leftImageXPositionPassive;
     [SerializeField] private int leftImageYPosition;
     [SerializeField] private int rightImageXPosition;
-    [SerializeField] private int rightImageXPositionPassive;
     [SerializeField] private int rightImageYPosition;
     [SerializeField] private int tweenTime;
+    [SerializeField] private float speakTweenTime = 0.5f;
     [SerializeField] private Color passiveColor;
-    [SerializeField] private List<String> mainCharacterNames = new List<String>()
+    [SerializeField] private List<string> mainCharacterNames = new()
     {
         "MonsiCalbar",
         "MonsiPantalon"
     };
 
     private CharacterReferences lastCharacter;
-    private string lastCharacterName;
     private string lastEmotion;
     private const Ease AppearEase = Ease.OutCubic;
 
@@ -45,16 +43,17 @@ public class HeadDisplay : MonoBehaviour
         public readonly Image Image;
         public readonly float XPosition;
         public readonly float XAppearOffset;
-        public readonly float XPassivePosition;
         public CharacterReferences Opposite;
+        public Vector3 BaseScale;
+        public string LastName = "";
 
-        public CharacterReferences(Transform transform, Image image, float xPosition, float xAppearPosition, float xPassivePosition)
+        public CharacterReferences(Transform transform, Image image, float xPosition, float xAppearOffset)
         {
             Transform = transform;
             Image = image;
             XPosition = xPosition;
-            XAppearOffset = xAppearPosition;
-            XPassivePosition = xPassivePosition;
+            XAppearOffset = xAppearOffset;
+            BaseScale = Transform.localScale;
         }
     }
 
@@ -68,8 +67,8 @@ public class HeadDisplay : MonoBehaviour
         imageTransformLeft.position = new Vector3(leftImageXPosition, leftImageYPosition, 0);
         imageTransformRight.position = new Vector3(rightImageXPosition, rightImageYPosition, 0);
 
-        leftCharacter = new CharacterReferences(imageTransformLeft, imageLeft, leftImageXPosition, -200, leftImageXPositionPassive);
-        rightCharacter = new CharacterReferences(imageTransformRight, imageRight, rightImageXPosition, 200, rightImageXPositionPassive);
+        leftCharacter = new CharacterReferences(imageTransformLeft, imageLeft, leftImageXPosition, -200);
+        rightCharacter = new CharacterReferences(imageTransformRight, imageRight, rightImageXPosition, 200);
         leftCharacter.Opposite = rightCharacter;
         rightCharacter.Opposite = leftCharacter;
     }
@@ -77,7 +76,7 @@ public class HeadDisplay : MonoBehaviour
     [YarnCommand("FaceReset")]
     public void FaceReset()
     {
-        lastCharacterName = "";
+        
     }
     
     [YarnCommand("FaceUpdate")]
@@ -88,16 +87,9 @@ public class HeadDisplay : MonoBehaviour
             if (Dict.TryGetValue((characterName, emotion), out Sprite sprite))
             {
                 // Main character is on the left, other characters are on the right.
-                if (mainCharacterNames.Contains(characterName))
-                {
-                    UpdateCharacter(leftCharacter, sprite, characterName);
-                }
-                else
-                {
-                    UpdateCharacter(rightCharacter, sprite, characterName);
-                }
-                
-                lastCharacterName = characterName;
+                UpdateCharacter(mainCharacterNames.Contains(characterName) ? leftCharacter : rightCharacter,
+                    sprite,
+                    characterName);
             }
             else
             {
@@ -112,18 +104,21 @@ public class HeadDisplay : MonoBehaviour
 
     private void UpdateCharacter(CharacterReferences character, Sprite sprite, string newName)
     {
-        UpdateEmotion(character.Image, sprite);
-        
-        if (lastCharacterName != newName)
+        UpdateCharacterEmotion(character.Image, sprite);
+
+        if (character.LastName != newName)
         {
             CharacterAppears(character);
-            CharacterDisappears(character.Opposite);
         }
-
+        
+        CharacterSpeaks(character);
+        CharacterUnspeaks(character.Opposite);
+        
+        character.LastName = newName;
         lastCharacter = character;
     }
     
-    private void UpdateEmotion(Image image, Sprite sprite)
+    private void UpdateCharacterEmotion(Image image, Sprite sprite)
     {
         image.sprite = sprite;
         image.SetNativeSize();
@@ -139,27 +134,33 @@ public class HeadDisplay : MonoBehaviour
         character.Image.DOFade(1, tweenTime);
     }
 
+    private void CharacterSpeaks(CharacterReferences character)
+    {
+        character.Transform.DOScale(character.BaseScale * 1.1f, speakTweenTime).SetEase(AppearEase);
+    }
+
+    private void CharacterUnspeaks(CharacterReferences character)
+    {
+        character.Transform.DOScale(character.BaseScale, speakTweenTime).SetEase(AppearEase);
+    }
+
     private void CharacterDisappears(CharacterReferences character)
     {
-        Debug.Log("aafwsfas");
         character.Transform.DOLocalMove(new Vector3(character.XPosition + character.XAppearOffset, rightImageYPosition, 0), tweenTime)
             .SetEase(AppearEase);
         character.Image.DOColor(passiveColor, tweenTime).SetEase(AppearEase);
     }
 
-    [YarnCommand("leftCharaLeaving")]
-    public void leftCharaLeaving()
+    [YarnCommand("LeftCharacterDisappears")]
+    public void LeftCharacterDisappears()
     {
-        imageTransformLeft.DOLocalMove(new Vector3(leftImageXPosition - 200, leftImageYPosition, 0), tweenTime)
-            .SetEase(Ease.OutCubic);
-        imageLeft.DOFade(0, tweenTime);
+        CharacterDisappears(leftCharacter);
     }
-    [YarnCommand("rightCharaLeaving")]
-    public void rightCharaLeaving()
+
+    [YarnCommand("RightCharacterDisappears")]
+    public void RightCharacterDisappears()
     {
-        imageTransformRight.DOLocalMove(new Vector3(rightImageXPosition - 200, rightImageYPosition, 0), tweenTime)
-            .SetEase(Ease.OutCubic);
-        imageRight.DOFade(0, tweenTime);
+        CharacterDisappears(rightCharacter);
     }
 
     [YarnCommand("switchTalker")]
@@ -167,7 +168,7 @@ public class HeadDisplay : MonoBehaviour
     {
         if (lastCharacter == leftCharacter)
         {
-            imageTransformLeft.DOLocalMove(new Vector3(leftImageXPositionPassive, leftImageYPosition, 0), tweenTime)
+            imageTransformLeft.DOLocalMove(new Vector3(leftImageXPosition - 200, leftImageYPosition, 0), tweenTime)
                 .SetEase(Ease.OutCubic);
             imageLeft.DOColor(passiveColor, tweenTime).SetEase(AppearEase);
             imageTransformRight.DOLocalMove(new Vector3(rightImageXPosition, rightImageYPosition, 0), tweenTime)
@@ -177,7 +178,7 @@ public class HeadDisplay : MonoBehaviour
         }
         else if (lastCharacter == rightCharacter)
         {
-            imageTransformRight.DOLocalMove(new Vector3(rightImageXPositionPassive, rightImageYPosition, 0), tweenTime)
+            imageTransformRight.DOLocalMove(new Vector3(rightImageXPosition + 200, rightImageYPosition, 0), tweenTime)
                 .SetEase(Ease.OutCubic);
             imageRight.DOColor(passiveColor, tweenTime).SetEase(AppearEase);
             imageTransformLeft.DOLocalMove(new Vector3(leftImageXPosition, leftImageYPosition, 0), tweenTime)
