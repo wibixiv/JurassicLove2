@@ -28,12 +28,15 @@ Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’offic
     Zozo : Monsi !... qu’est-ce qui te prend ?... je vais être obligée de-
     <<FaceUpdate IlluManager "MonsiPantalon" "super_enerve">>
 	Monsi : tu vas faire quoi, hein ??!!
-    <<blackscreen GameManager>>
     <<BackgroundUpdate IlluManager "rubika" "Matin_Couloir">>
 -> Monsi Sage
+    <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
     Monsi : Bon, d'accord, je comprends, c'est mérité.
+    <<FaceUpdate IlluManager "Zozo" "normal">>
     Zozo : C'est bien Monsi, je vois que tu restes respectueux malgré tout…
+    <<FaceUpdate IlluManager "MonsiPantalon" "ennuye">>
     Monsi : (oui ben n'en fait pas trop quand même...)
+    <<FaceUpdate IlluManager "Zozo" "normal">>
     Zozo : Bien...Prends place, s'il te plaît.
     -> Aller près de la fenêtre
         <<jump Nerd_Matin_CoursPerspective>>
@@ -44,6 +47,7 @@ title: Matin_Couloir
 tags: 
 position: 39.761669635772705,-427.5820617675781
 ---
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
 Monsi : ah. 
     Monsi : Ben...Je vais trouver autre chose à faire. 
     -> Se balader un peu
@@ -62,15 +66,22 @@ tags:
 position: 170.81722259521484,-181.7971954345703
 ---
 Monsi décide de se rendre dans les backrooms de l'école. 
+<<FaceUpdate IlluManager "MonsiPantalon" "normal">>
 Monsi : Peut-être que j’aurai un peu de calme là-bas...
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
 A l'écran, Monsi est choqué, il vient de tomber sur quelque chose de terrible. Le professeur Zozo a été assassiné ! *illu*
 Monsi : Professeur Zozo ?! Qu'est-ce qu'il s'est passé ici ?!
+<<FaceUpdate IlluManager "Yandere" "blush">>
 Yandere : M-Monsi ?! Qu’est-ce que tu fais ici ?
+<<FaceUpdate IlluManager "Monsi" "triste">>
 Monsi : Tu... Tu l'as tué ?!
+<<FaceUpdate IlluManager "Yandere" "normal">>
 Yandere : C’est le professeur que tu détestes le plus, n’est-ce pas ?
+<<FaceUpdate IlluManager "Yandere" "normal">>
 Monsi : Oui, mais c’est pas une raison de l’assassiner !
 Yandere : Je dirai pas ‘assassiner’, j’ai simplement résilié son abonnement à l’oxygène.
 Monsi : Non mais en plus j’ai stressé pour mon rendu pour rien mainten- NAN ! C’EST GRAVE SI DES GENS LE VOIENT !
+<<FaceUpdate IlluManager "Yandere" "normal">>
 Yandere : Mais je l’ai fait pour toi..! Je ne voulais pas que tu passes plus de nuits sans sommeil à faire des rendus de perspective éreintants… =)
 Monsi : Ah bon ? AH- euh…. je sais pas trop quoi te dire, mais c’est super grave !!!
 Yandere : Tu comptes y faire quoi, Monsi ?
