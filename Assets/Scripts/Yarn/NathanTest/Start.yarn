@@ -61,7 +61,34 @@ title: BadBoy_Matin_CoursPerspective
 tags: 
 position: -43.36729621887207,-186.11212158203125
 ---
-BadBoy_Matin_CoursPerspective
+<<FaceUpdate IlluManager "MonsiPantalon" "deg">>
+Monsi : Bon j’y suis quand même allé un peu fort …
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+Monsi : Je suppose que je vais attendre qu’il m’autorise à revenir en cours …
+<<FaceUpdate IlluManager "BadBoy" "normal">>
+Angel : Tu vas vraiment te faire victimiser par un remplaçant ? 
+<<FaceUpdate IlluManager "MonsiPantalon" "ennuye">>
+Monsi : Oh, bonjour Angel...!
+<<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
+Monsi : Tu t’es aussi fait viré de cours non ? 
+<<FaceUpdate IlluManager "BadBoy" "enerve">>
+Angel : ... 
+<<FaceUpdate IlluManager "BadBoy" "dedain">>
+Angel : Tu parles trop. 
+...
+...
+<<FaceUpdate IlluManager "BadBoy" "blush">>
+Angel : Sinon ça te dirait d'aller autre part que ce vieux couloir ?
+Angel : Je vais en ville...
+Angel : Tu m'accompagnes ? 
+
+-> Non merci, je vais pas sécher juste pour une petite dispute ! C'est 10k l'année quand même...
+    //RAAAAAAA
+    <<jump EnTravaux>>
+-> Oui, avec plaisir ! 
+    <<LeftCharacterDisappears>>
+    <<RightCharacterDisappears>>
+    <<jump Matin_Ruelle>>
 ===
 title: Yandere_Matin_CoursPerspective
 tags: 
@@ -78,47 +105,170 @@ Monsi : Professeur Zozo ?! Qu'est-ce qu'il s'est passé ?!
 Yandere : M-Monsi ?! Qu’est-ce que tu fais ici ?
 <<FaceUpdate IlluManager "Monsi" "triste">>
 Monsi : Tu... Tu l'as tué ?!
-<<FaceUpdate IlluManager "Yandere" "normal">>
+<<FaceUpdate IlluManager "Yandere" "blush">>
 Yandere : C’est le professeur que tu détestes le plus, n’est-ce pas ?
-<<FaceUpdate IlluManager "Yandere" "normal">>
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
 Monsi : Oui, mais c’est pas une raison de l’assassiner !
-Yandere : Je dirai pas ‘assassiner’, j’ai simplement résilié son abonnement à l’oxygène.
-Monsi : Non mais en plus j’ai stressé pour mon rendu pour rien mainten- NAN ! C’EST GRAVE SI DES GENS LE VOIENT !
 <<FaceUpdate IlluManager "Yandere" "normal">>
+Yandere : Je dirai pas ‘assassiner’, j’ai simplement résilié son abonnement à l’oxygène.
+<<FaceUpdate IlluManager "MonsiPantalon" "ennuye">>
+Monsi : Non mais en plus j’ai stressé pour mon rendu pour rien mainten- NAN ! C’EST GRAVE SI DES GENS LE VOIENT !
+<<FaceUpdate IlluManager "Yandere" "blush">>
 Yandere : Mais je l’ai fait pour toi..! Je ne voulais pas que tu passes plus de nuits sans sommeil à faire des rendus de perspective éreintants… =)
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
 Monsi : Ah bon ? AH- euh…. je sais pas trop quoi te dire, mais c’est super grave !!!
+<<FaceUpdate IlluManager "Yandere" "enerve">>
 Yandere : Tu comptes y faire quoi, Monsi ?
 -> Appeler la police
+    <<FaceUpdate IlluManager "MonsiPantalon" "nerveux">>
     Monsi : Euh, je… je vais aux toilettes ! ^^’
+    <<FaceUpdate IlluManager "Yandere" "enerve">>
     Yandere : Tu n’appelles pas la police j’espère…
+    <<FaceUpdate IlluManager "MonsiPantalon" "nerveux">>
     Monsi : Non non, haha… allez à tout de suite !
+    <<LeftCharacterDisappears>>
     Bruit de porte qui claque, mini jeu police
     -> Gagner le mini jeu
+        <<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
         Monsi : Merci beaucoup !!
         Yandere est en prison
+        <<FaceUpdate IlluManager "Yandere" "enerve">>
         Yandere : Monsi ..! comment as-tu pu me faire ça ?... enfin, pourquoi je m’inquiète… je te retrouverai… =)
     -> Perdre le mini jeu
+      <<FaceUpdate IlluManager "Yandere" "enerve">>
         Yandere : Tu oses me faire ça ... Après tout ce que j'ai fait pour toi ?! 
         Mort
         <<backToMenu GameManager>>
 -> La couvrir
+    <<FaceUpdate IlluManager "MonsiPantalon" "nerveux">>
     Monsi : Je te couvrirai ! De toute façon il était trop nul ce prof ! 
+    <<FaceUpdate IlluManager "Yandere" "blush">>
     Yandere : Monsi…! Tu ferai ça pour moi ?
+    <<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
     Monsi : Oui !...aussi parce que j’ai pas envie de finir en prison je te l’avouerai-
+    <<FaceUpdate IlluManager "Yandere" "blush">>
     Yandere : Super !!! ça voudrai dire que tu me couvrirai si j’en tuais plus ?
+    <<FaceUpdate IlluManager "MonsiPantalon" "super_nerveux">>
     Monsi : Euh, quoi-
+    <<FaceUpdate IlluManager "Yandere" "blush">>
     Yandere : C’est génial ! Viens, je sais où le cacher !
+    <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
     Monsi : EUH- ok…?
 ===
 title: Nerd_Matin_CoursPerspective
 tags: 
 position: -330.8632507324219,-169
 ---
-Nerd_Matin_CoursPerspective
+<<jump EnTravaux>>
 ===
 title: Tsundere_Matin_CoursPerspective
 tags: 
 position: -537.8569831848145,-168.72654724121094
 ---
-Tsundere_Matin_CoursPerspective
+<<FaceUpdate IlluManager "Tsundere" "enerve">>
+Piper : J’espère que t’es content, tu t’es mis la honte devant tout le monde !
+<<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
+Monsi : Haha…coucou Piper !
+<<FaceUpdate IlluManager "Tsundere" "enerve">>
+Piper : Je suis sûre que tu veux t’asseoir à côté de moi ? Vas-y, mais ne me déconcentre pas. 
+<<FaceUpdate IlluManager "MonsiPantalon" "normal">>
+Monsi : Euh- ben en fait j’ai pas encore demandé. 
+<<FaceUpdate IlluManager "Tsundere" "blush">>
+Piper : ...
+Piper : Juste...Assieds-toi.
+<<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
+Monsi : J’ai entendu parler d’une sortie à la plage avec la classe… tu veux venir ?
+<<FaceUpdate IlluManager "Tsundere" "triste">>
+Piper : Je… je ne peux pas, désolée. Mes parents me l’interdisent.
+<<FaceUpdate IlluManager "MonsiPantalon" "enerve">>
+Monsi : Mais pourquoi ? On est tous assez grands pour aller à la plage tout seuls !
+<<FaceUpdate IlluManager "Tsundere" "pensif">>
+Piper : Cherche pas, c’est mes parents… ils sont comme ça… 
+<<FaceUpdate IlluManager "MonsiPantalon" "enerve">>
+Monsi : C’est trop injuste ! Laisse-moi les raisonner.
+<<FaceUpdate IlluManager "Tsundere" "normal">>
+Piper : Monsi, ça ne marchera pas-
+*bip* *bip* *bip*
+Piper : Mais !
+<<FaceUpdate IlluManager "MonsiPantalon" "enerve">>
+Monsi : Allô ? Vous êtes les parents de Piper ?
+Père de Piper : Son père, oui. Qui êtes-vous ? Que voulez-vous ?
+Monsi : Vous n’avez pas le droit d’empêcher votre fille de sortir !
+Père de Piper : Pour qui tu te prends ?! Tu penses pouvoir contredire mon autorité ?!
+Monsi : Oui ! Tu sais pas qui j'suis moi !! 
+<<FaceUpdate IlluManager "MonsiPantalon" "nerveux">>
+Monsi : (ok là je vais peut-être un peu loin-)
+Père de Piper : HAH ! Alors dans ce cas je vais t’interroger espèce de petit idiot… si tu réponds correctement, tu pourras emmener Piper à votre sortie de dégénérés.
+<<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
+Monsi : Ah, c’était faci-
+
+-> Minijeu gagné
+    Père de Piper : Bon… tu n’es pas aussi bête que ce que j’imaginais. 
+    <<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
+    Monsi : Oh, merci !
+    Père de Piper : Allez-y, à votre sortie.
+    Monsi : Merci monsieur !
+    <<FaceUpdate IlluManager "Tsundere" "blush">>
+    Piper : Q-quoi ?! Comment ?
+    *bip*
+    <<FaceUpdate IlluManager "MonsiPantalon" "sus">>
+    Monsi : J’ai juste usé de mon intellect. 
+    Piper : Monsi…
+-> Minijeu perdu
+    Père de Piper : Mais t’es trop bête en fait.
+    <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+    Monsi : :(
+    <<FaceUpdate IlluManager "Tsundere" "triste">>
+    Piper : ...
+    *bip*
+    Piper : C-c’est pas grave Monsi… au moins tu as essayé. 
+    <<jump EnTravaux>>
 ===
+title: Matin_Ruelle
+tags: 
+position: -330.8632507324219,-169
+---
+Angel et Monsi sorte de l'école et marche dans la ville, avant d'atteindre une ruelle sombre.
+<<FaceUpdate IlluManager "MonsiPantalon" "normal">>
+Monsi : Oula chelou la ruelle 
+<<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
+Monsi : Tu vas me kidnapper ou quoi haha
+feur
+<<FaceUpdate IlluManager "BadBoy" "normal">>
+Bad boy : Dis moi Monsi...
+<<FaceUpdate IlluManager "BadBoy" "worried">>
+Bad boy : Pourquoi...
+Bad boy : Pourquoi tu es d'une espèce différente de nous ?
+<<FaceUpdate IlluManager "MonsiPantalon" "deg">>
+Monsi : Tu as un problème contre les gens différents Angel ? 
+<<FaceUpdate IlluManager "BadBoy" "choque">>
+Bad boy : NON NON PAS DU TOUT !! 
+<<FaceUpdate IlluManager "BadBoy" "worried">>
+Bad boy : C’est juste que tu ne passes pas inaperçu dans cette ville … 
+ <<FaceUpdate IlluManager "BadBoy" "choque">>
+Bad boy : Je
+Bad boy : Euh...
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+Monsi : Pourquoi tu as l'air aussi mal ?
+Monsi : Qu’est ce qu’on fait ici Angel ??
+<<FaceUpdate IlluManager "MonsiPantalon" "deg">>
+Monsi : Pourquoi tu tiens une barre dans ta main ??!
+ <<FaceUpdate IlluManager "BadBoy" "choque">>
+Bad boy : PARDONNE MOI MONSI !! 
+
+Monsi tombe inconscient sous le coup d'Angel...
+...
+...
+...
+<<jump EnTravaux>>
+
+===
+title: EnTravaux
+tags: 
+position: -330.8632507324219,-169
+---
+Hop là ! Le script de Jurassic Love, Jour 2 n'est pas fini. Au travail Tobias ! 
+===
+
+
+

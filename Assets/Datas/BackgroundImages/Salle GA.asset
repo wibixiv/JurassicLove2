@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Salle GA
   m_EditorClassIdentifier: 
   spriteName: salleGA
-  sprite: {fileID: 21300000, guid: cac6438af917a47469310082da22fd41, type: 3}
+  sprite: {fileID: 21300000, guid: 908838d8011e8aa45a35c1f030ed7972, type: 3}
