@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77bf03a59c9240cfb0bdd7b01e5f41e5, type: 3}
-  m_Name: MonsiCalbar
+  m_Name: zozo1
   m_EditorClassIdentifier: 
-  name: MonsiPantalon
-  emotion: 0
-  sprite: {fileID: 21300000, guid: d1eb53ffd5d725b44b59cb46b0c2c0f7, type: 3}
+  name: Zozo
+  emotion: 7
+  sprite: {fileID: 21300000, guid: f7a610bd2ba31314ea7a3bc1eb8c5473, type: 3}

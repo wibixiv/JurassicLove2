@@ -1,9 +1,9 @@
 ﻿title: Start
-position: -180,-883
-color: red
+tags: 
+position: -194,-857
 ---
 Rubika, 10h, Cours de perspective
-<<BackgroundUpdate IlluManager "ethan" "Matin_CoursPerspective">>
+<<BackgroundUpdate IlluManager "salleGA" "Matin_CoursPerspective">>
 <<jump Matin_CoursPerspective>>
 ===
 title : Matin_CoursPerspective
@@ -12,22 +12,23 @@ color: red
 ---
 <<FaceUpdate IlluManager "Zozo" "normal">>
 Zozo : Bien, alors aujourd’hui nous allons voir les ellipses…. j’espère que vous avez terminé et amené vos rendus de la dernière fois…… 
-<<FaceUpdate IlluManager "MonsiCalbar" "heureux">>
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
 Monsi : Oh non ! J'ai oublié ma pers-
 <<FaceUpdate IlluManager "Zozo" "enerve">>
 Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’office, tu auras 0/20 !!
+
 -> Monsi Racaille
+    <<FaceUpdate IlluManager "MonsiPantalon" "enerve">>
     Monsi : C'est injuste !
+    <<FaceUpdate IlluManager "Zozo" "enerve">>
     Zozo : Eh bien Monsi, tu n’avais qu’à amener ton rendu, petit effronté…
+    <<FaceUpdate IlluManager "MonsiPantalon" "super_enerve">>
     Monsi : Vous êtes vraiment un sal-
+    <<FaceUpdate IlluManager "Zozo" "enerve">>
     Zozo : Monsi !... qu’est-ce qui te prend ?... je vais être obligée de-
+    <<FaceUpdate IlluManager "MonsiPantalon" "super_enerve">>
 	Monsi : tu vas faire quoi, hein ??!!
-    Monsi : ah. 
-    Monsi : Ben...Je vais trouver autre chose à faire. 
-    -> Se balader un peu
-        <<jump Yandere_Matin_CoursPerspective>>
-    -> Rester dans le couloir
-        <<jump BadBoy_Matin_CoursPerspective>>
+    <<jump Matin_Couloir>>
 -> Monsi Sage
     Monsi : Bon, d'accord, je comprends, c'est mérité.
     Zozo : C'est bien Monsi, je vois que tu restes respectueux malgré tout…
@@ -38,13 +39,24 @@ Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’offic
     -> Aller au premier rang
         <<jump Tsundere_Matin_CoursPerspective>>
 ===
+title: Matin_Couloir
+position: -492,-165
+---
+Monsi : ah. 
+    Monsi : Ben...Je vais trouver autre chose à faire. 
+    -> Se balader un peu
+        <<jump Yandere_Matin_CoursPerspective>>
+    -> Rester dans le couloir
+        <<jump BadBoy_Matin_CoursPerspective>>
+===
 title: BadBoy_Matin_CoursPerspective
 position: -492,-165
 ---
 BadBoy_Matin_CoursPerspective
 ===
 title: Yandere_Matin_CoursPerspective
-position: 129,-179
+tags: 
+position: 206.44393157958984,-76.23655700683594
 ---
 Monsi décide de se rendre dans les backrooms de l'école. 
 Monsi : Peut-être que j’aurai un peu de calme là-bas...
@@ -80,7 +92,6 @@ Yandere : Tu comptes y faire quoi, Monsi ?
     Monsi : Euh, quoi-
     Yandere : C’est génial ! Viens, je sais où le cacher !
     Monsi : EUH- ok…?
-
 ===
 title: Nerd_Matin_CoursPerspective
 position: -286,-169
@@ -88,7 +99,8 @@ position: -286,-169
 Nerd_Matin_CoursPerspective
 ===
 title: Tsundere_Matin_CoursPerspective
-position: -79,-173
+tags: 
+position: -49.63901901245117,-166.0875244140625
 ---
 Tsundere_Matin_CoursPerspective
 ===
