@@ -27,6 +27,7 @@ public class HeadDisplay : MonoBehaviour
     [SerializeField] private Color passiveColor;
 
     private string lastPerso;
+    private string lastEmotion;
     private string leftPerso;
     private string rightPerso;
     private Ease _ease = Ease.OutCubic;
@@ -59,7 +60,7 @@ public class HeadDisplay : MonoBehaviour
             {
                 if (name == "MonsiCalbar" || name == "MonsiPantalon")
                 {
-                    if (leftPerso != name)
+                    if (leftPerso != name || lastEmotion != emotion)
                     {
                         imageLeft.enabled = true;
                         leftPerso = name;
@@ -80,8 +81,9 @@ public class HeadDisplay : MonoBehaviour
                 }
                 else
                 {
-                    if (rightPerso != name)
+                    if (rightPerso != name || lastEmotion != emotion)
                     {
+                        Debug.Log(sprite);
                         imageRight.enabled = true;
                         rightPerso = name;
                         imageRight.sprite = sprite;
