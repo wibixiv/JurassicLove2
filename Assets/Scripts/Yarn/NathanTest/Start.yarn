@@ -1,10 +1,10 @@
 ﻿title: Start
 tags: 
-position: -194,-857
+position: -183.4439239501953,-970.4776611328125
 ---
 Rubika, 10h, Cours de perspective
 <<BackgroundUpdate IlluManager "salleGA" "Matin_CoursPerspective">>
-<<jump Matin_CoursPerspective>>
+//<<jump Matin_CoursPerspective>>
 ===
 title : Matin_CoursPerspective
 position: -181,-742
@@ -28,7 +28,8 @@ Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’offic
     Zozo : Monsi !... qu’est-ce qui te prend ?... je vais être obligée de-
     <<FaceUpdate IlluManager "MonsiPantalon" "super_enerve">>
 	Monsi : tu vas faire quoi, hein ??!!
-    <<jump Matin_Couloir>>
+    <<blackscreen GameManager>>
+    <<BackgroundUpdate IlluManager "rubika" "Matin_Couloir">>
 -> Monsi Sage
     Monsi : Bon, d'accord, je comprends, c'est mérité.
     Zozo : C'est bien Monsi, je vois que tu restes respectueux malgré tout…
@@ -40,7 +41,8 @@ Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’offic
         <<jump Tsundere_Matin_CoursPerspective>>
 ===
 title: Matin_Couloir
-position: -492,-165
+tags: 
+position: 39.761669635772705,-427.5820617675781
 ---
 Monsi : ah. 
     Monsi : Ben...Je vais trouver autre chose à faire. 
@@ -50,13 +52,14 @@ Monsi : ah.
         <<jump BadBoy_Matin_CoursPerspective>>
 ===
 title: BadBoy_Matin_CoursPerspective
-position: -492,-165
+tags: 
+position: -43.36729621887207,-186.11212158203125
 ---
 BadBoy_Matin_CoursPerspective
 ===
 title: Yandere_Matin_CoursPerspective
 tags: 
-position: 206.44393157958984,-76.23655700683594
+position: 170.81722259521484,-181.7971954345703
 ---
 Monsi décide de se rendre dans les backrooms de l'école. 
 Monsi : Peut-être que j’aurai un peu de calme là-bas...
@@ -94,13 +97,14 @@ Yandere : Tu comptes y faire quoi, Monsi ?
     Monsi : EUH- ok…?
 ===
 title: Nerd_Matin_CoursPerspective
-position: -286,-169
+tags: 
+position: -330.8632507324219,-169
 ---
 Nerd_Matin_CoursPerspective
 ===
 title: Tsundere_Matin_CoursPerspective
 tags: 
-position: -49.63901901245117,-166.0875244140625
+position: -537.8569831848145,-168.72654724121094
 ---
 Tsundere_Matin_CoursPerspective
 ===
