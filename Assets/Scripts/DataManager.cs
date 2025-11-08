@@ -12,7 +12,7 @@ public class DataManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(playerData);
         string path = Application.persistentDataPath + "/playerData.json";
-        System.IO.File.WriteAllText(path, json);
+        File.WriteAllText(path, json);
     }
 
     public void LoadGame()
@@ -20,7 +20,7 @@ public class DataManager : MonoBehaviour
         string path = Application.persistentDataPath + "/playerData.json";
         if (File.Exists(path))
         {
-            string json = System.IO.File.ReadAllText(path);
+            string json = File.ReadAllText(path);
             PlayerData loadedData = JsonUtility.FromJson<PlayerData>(json);
 
             GameManager.Instance.illuUnlocked = loadedData.illuUnlocked;
