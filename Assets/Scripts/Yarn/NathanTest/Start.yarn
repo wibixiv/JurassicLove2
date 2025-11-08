@@ -28,6 +28,7 @@ Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’offic
     Zozo : Monsi !... qu’est-ce qui te prend ?... je vais être obligée de-
     <<FaceUpdate IlluManager "MonsiPantalon" "super_enerve">>
 	Monsi : tu vas faire quoi, hein ??!!
+    <<RightCharacterDisappears IlluManager>>
     <<BackgroundUpdate IlluManager "rubika" "Matin_Couloir">>
 -> Monsi Sage
     <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
@@ -38,6 +39,7 @@ Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’offic
     Monsi : (oui ben n'en fait pas trop quand même...)
     <<FaceUpdate IlluManager "Zozo" "normal">>
     Zozo : Bien...Prends place, s'il te plaît.
+    <<RightCharacterDisappears IlluManager>>
     -> Aller près de la fenêtre
         <<jump Nerd_Matin_CoursPerspective>>
     -> Aller au premier rang
@@ -69,8 +71,9 @@ Monsi décide de se rendre dans les backrooms de l'école.
 <<FaceUpdate IlluManager "MonsiPantalon" "normal">>
 Monsi : Peut-être que j’aurai un peu de calme là-bas...
 <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
-A l'écran, Monsi est choqué, il vient de tomber sur quelque chose de terrible. Le professeur Zozo a été assassiné ! *illu*
-Monsi : Professeur Zozo ?! Qu'est-ce qu'il s'est passé ici ?!
+<<illustration Illu_ZozoMort>>
+Monsi est choqué, devant lui s'étend le corps sans vie de Zozo, son professeur
+Monsi : Professeur Zozo ?! Qu'est-ce qu'il s'est passé ?!
 <<FaceUpdate IlluManager "Yandere" "blush">>
 Yandere : M-Monsi ?! Qu’est-ce que tu fais ici ?
 <<FaceUpdate IlluManager "Monsi" "triste">>
