@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Yarn
 {
     [CreateAssetMenu(fileName = "CharacterEmotions", menuName = "ScriptableObjects/CharacterEmotions")]
     public class CharacterEmotions : ScriptableObject
     {
-        public string name;
+        public new string name;
         public Emotions emotion;
         public Sprite sprite;
         
