@@ -1,14 +1,13 @@
 ﻿title: Start
 tags: 
-position: -183.4439239501953,-970.4776611328125
+position: -62,-925
 ---
 Rubika, 10h, Cours de perspective
 <<BackgroundUpdate IlluManager "salleGA" "Matin_CoursPerspective">>
 //<<jump Matin_CoursPerspective>>
 ===
 title : Matin_CoursPerspective
-position: -181,-742
-color: red
+position: -66,-765
 ---
 <<FaceUpdate IlluManager "Zozo" "normal">>
 Zozo : Bien, alors aujourd’hui nous allons voir les ellipses…. j’espère que vous avez terminé et amené vos rendus de la dernière fois…… 
@@ -47,7 +46,7 @@ Zozo : Comment ?! Monsi… tu es irrécupérable, c’est honteux !... D’offic
 ===
 title: Matin_Couloir
 tags: 
-position: 39.761669635772705,-427.5820617675781
+position: -237,-578
 ---
 <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
 Monsi : ah. 
@@ -55,11 +54,11 @@ Monsi : ah.
     -> Se balader un peu
         <<jump Yandere_Matin_CoursPerspective>>
     -> Rester dans le couloir
-        <<jump BadBoy_Matin_CoursPerspective>>
+        <<jump BadBoy_Matin_Couloir>>
 ===
-title: BadBoy_Matin_CoursPerspective
+title: BadBoy_Matin_Couloir
 tags: 
-position: -43.36729621887207,-186.11212158203125
+position: -347,-278
 ---
 <<FaceUpdate IlluManager "MonsiPantalon" "deg">>
 Monsi : Bon j’y suis quand même allé un peu fort …
@@ -83,8 +82,11 @@ Angel : Je vais en ville...
 Angel : Tu m'accompagnes ? 
 
 -> Non merci, je vais pas sécher juste pour une petite dispute ! C'est 10k l'année quand même...
-    //RAAAAAAA
-    <<jump EnTravaux>>
+    Monsi attend dans le couloir, avant que Zozo ne prenne pitié de lui et l'autorise à revenir en cours.
+    -> S'asseoir près de la fenêtre
+        <<jump Nerd_Matin_CoursPerspective>>
+    -> S'asseoir au premier rang
+        <<jump Tsundere_Matin_CoursPerspective>>
 -> Oui, avec plaisir ! 
     <<LeftCharacterDisappears>>
     <<RightCharacterDisappears>>
@@ -92,7 +94,7 @@ Angel : Tu m'accompagnes ?
 ===
 title: Yandere_Matin_CoursPerspective
 tags: 
-position: 170.81722259521484,-181.7971954345703
+position: -581,-278
 ---
 Monsi décide de se rendre dans les backrooms de l'école. 
 <<FaceUpdate IlluManager "MonsiPantalon" "normal">>
@@ -157,13 +159,13 @@ Yandere : Tu comptes y faire quoi, Monsi ?
 ===
 title: Nerd_Matin_CoursPerspective
 tags: 
-position: -330.8632507324219,-169
+position: 87,-587
 ---
 <<jump EnTravaux>>
 ===
 title: Tsundere_Matin_CoursPerspective
 tags: 
-position: -537.8569831848145,-168.72654724121094
+position: 580,-595
 ---
 <<FaceUpdate IlluManager "Tsundere" "enerve">>
 Piper : J’espère que t’es content, tu t’es mis la honte devant tout le monde !
@@ -226,7 +228,7 @@ Monsi : Ah, c’était faci-
 ===
 title: Matin_Ruelle
 tags: 
-position: -330.8632507324219,-169
+position: -347,-71
 ---
 Angel et Monsi sorte de l'école et marche dans la ville, avant d'atteindre une ruelle sombre.
 <<FaceUpdate IlluManager "MonsiPantalon" "normal">>
@@ -260,15 +262,191 @@ Monsi tombe inconscient sous le coup d'Angel...
 ...
 ...
 ...
+<<jump BadBoy_Matin_Squidgame>>
+===
+title: BadBoy_Matin_Squidgame
+tags: 
+position: -347,115
+---
+//fond noir, Monsi a les yeux fermés
+
+Voix inconnue : Félicitation Angel ! 
+Voix inconnue : Tu nous a ramené un très beau spécimen
+Voix inconnue : Les VIPs seront ravis gnéhéhé
+
+//Monsi ouvre les yeux
+
+Monsi ouvre les yeux et constate qu'il est attaché dans une cave lugubre.
+
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+Monsi : Mais ! 
+Monsi : Je suis où vous êtes qui ?
+
+Le coeur de Monsi bat à tout rompre. 
+
+Voix inconnue : Bonjour petite créature ! 
+Voix inconnue : Vous avez été sélectionné pour jouer à un jeu. 
+Voix inconnue : D’ici là veuillez ne pas causer de troubles.
+
+La vue de Monsi lui est à nouveau retirée alors que la personne mystérieuse lui noue un bandeau autour des yeux. 
+
+...
+
+Le temps passe dans l'angoisse. 
+
+...
+
+..
+
+.
+
+Un grand bruit de fracas résonne.
+
+Monsi entend des coups de feu suivis de cris. Au milieu de ce chaos, une voix familière se rapproche de lui.
+
+Voix familière : Excuse moi beauté, je me suis perdu 
+Voix familière : Tu saurais m’indiquer le chemin vers ton cœur ? 
+
+On enlève le bandeau de Monsi
+
+<<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
+Monsi : HARDIN !!!
+
+<<FaceUpdate IlluManager "Charo" "heureux">>
+Hardin : T’inquiète pas princesse je vais te sortir d’ici. 
+
+<<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+Monsi : Mais comment tu as sû ?! 
+
+//doit passer rapidement
+Hardin : Je vais te toucher la nuit.
+Hardin : Tu crois que je n’ai pas remarqué ton absence ma tarte au pomme ? 
+<<FaceUpdate IlluManager "Charo" "enerve">>
+Hardin : Je vais tous leur faire payer. 
+<<FaceUpdate IlluManager "Charo" "heureux">>
+Hardin : Mais d’abord ta sécurité est ma priorité.
+Hardin : Partons pendant que mes sbires les retiennent !
+
+Mini jeu !
+
+-> Gagner le mini jeu
+    <<FaceUpdate IlluManager "Charo" "heureux">>
+    Hardin : Haaaa la sortie ! 
+    Hardin : Tu vas bien princesse ?
+    <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+    Monsi : Oui...
+    ...
+    Voix familière : Erm...
+    <<FaceUpdate IlluManager "MonsiPantalon" "enerve">>
+    Monsi : Toi !!
+    <<FaceUpdate IlluManager "BadBoy" "worried">>
+    Angel : Monsi, je n’ai pas les mots pour exprimer ma trahison.
+    <<FaceUpdate IlluManager "BadBoy" "choque">>
+    Angel : J’ai des dettes envers eux, si je leur desobéis …
+    <<FaceUpdate IlluManager "BadBoy" "worried">>
+    Angel : Je m'excuse sincèrement, je t'apprécie du fond de mon coeur et j’aimerais repartir de zero avec toi . 
+    <<FaceUpdate IlluManager "MonsiPantalon" "normal">>
+    Monsi : Angel...
+    Monsi : Pourquoi tu ne nous en as pas parlé plus tôt ?
+    Monsi : On aurait pu t’aider...
+    <<FaceUpdate IlluManager "BadBoy" "blush">>
+    Angel : ...
+    <<FaceUpdate IlluManager "Charo" "enerve">>
+    Hardin : ILS REVIENNENT !!
+    Hardin : Monsi, viens avec moi !
+    <<FaceUpdate IlluManager "BadBoy" "enerve">>
+    Angel : Non, viens avec moi Monsi !
+    -> Partir avec Hardin
+        <<jump Hardin_Matin_Squidgame_Win>>
+    -> Partir avec Angel
+        //Insérer l'illu de cette fin.
+        Ya une illu là de base mais si tu lis ça c'est que Tobias l'a pas mise. Bisous.
+        <<ReturnToMenu>>
+-> Perdre le mini jeu
+    Un énième coup de feu retentit à travers les couloirs. 
+    Hardin ralentit, il titube. 
+    <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+    Monsi : Hardin...
+    <<FaceUpdate IlluManager "Charo" "shy">>
+    Hardin : *halète* 
+    <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+    Monsi : Hardin, tu vas bien ?!
+    <<FaceUpdate IlluManager "Charo" "triste">>
+    Hardin : Pardonne moi Monsi .. 
+    Hardin : J'aurais pas su te protéger, toi, la mie de mon coeur ...
+    Hardin pose un genou à terre. 
+    <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
+    Monsi : HARDIN !!
+    Monsi : HARDIN RELEVE TOI! RESTE AVEC MOI !!
+    <<FaceUpdate IlluManager "Charo" "triste">>
+    Hardin : Le savais-tu Monsi ? 
+    Hardin : Cette rose que je porte a toujours été pour toi...
+    Son autre genou tombe à terre. 
+    Hardin : La couleur orange évoque le feu de mes sentiments et les couchers de soleil aussi éclatants que ton regard.
+    Hardin : Et même fanées cette couleur persistera toujours...
+    Hardin : Qu’elle demeure symbole de mon amour passionnel pour toi, à jamais.
+    Monsi : HARDINNNNNNNN !!!
+    Recruteur : HAHAHAHAHA
+    Recruteur : Votre petite épopée est terminée 
+    Recruteur : Jetez moi ça , Monsi tu viens avec moi
+    Il ecrase la rose qu'Hardin portait. 
+    Des sbires du recruteur entraînent Monsi de force, loin de Hardin.
+    Monsi : NON ARRETEZ !!
+    Monsi : LAISSEZ MOI AVEC LUI !!
+    Il y a une illustration ici de base mais si tu lis ça c'est que Tobias l'a pas mise. Bisous.
+    //insérer illu SquidGame
+    <<backToMenu GameManager>>
+
+===
+
+title: Hardin_Matin_Squidgame_Win
+position: -347,301
+---
+//Insérer illu de Monsi et Hardin
+Ya une illu là de base mais si tu lis ça c'est que Tobias l'a pas mise. Bisous.
+
+Vous arrivez devant une lamborghini de 15 m de long 
+
+<<FaceUpdate IlluManager "Charo" "heureux">>
+Hardin : Allez MONSIgneur, je vous en prie.
+
+<<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
+Monsi : Merci Hardin ! 
+
+<<FaceUpdate IlluManager "MonsiPantalon" "deg">>
+Monsi : Juste, comment as-tu su que j'étais là ?
+
+Hardin place son doigt sur ses lèvres en souriant.
+
+<<FaceUpdate IlluManager "Charo" "heureux">>
+Hardin : Shhhh 
+Hardin : Tu sais bien que je ne laisserai aucun mal t'arriver. 
+
+<<FaceUpdate IlluManager "Charo" "enerve">>
+Hardin : Ce Angel... Pour qui il s'est pris ?!
+
+<<FaceUpdate IlluManager "MonsiPantalon" "nerveux">>
+Monsi : Arrête ! Il n'y est pour rien !! 
+
+<<FaceUpdate IlluManager "Charo" "heureux">>
+Hardin : L'important c'est que tu ailles bien. 
+
+<<FaceUpdate IlluManager "MonsiPantalon" "blush">>
+Monsi : Hardin...
+
+<<FaceUpdate IlluManager "Charo" "heureux">>
+Hardin : Zozo n’est pas là cet aprem, la classe va à la plage...
+Hardin : Je t'y conduis ? 
+
 <<jump EnTravaux>>
 
 ===
 title: EnTravaux
 tags: 
-position: -330.8632507324219,-169
+position: 293,-64
 ---
-Hop là ! Le script de Jurassic Love, Jour 2 n'est pas fini. Au travail Tobias ! 
+Hop là ! Le script de Jurassic Love, Jour 2 n'est pas fini. Au travail Tobias !
+<<backToMenu GameManager>>
+
 ===
-
-
 
