@@ -5558,7 +5558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1818950085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5941,8 +5941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33234f444dc821c4c98c8b44595063fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicMixer: {fileID: 24100000, guid: 5c2f1f89b80195c46b6146d0058bbada, type: 2}
-  musicSlider: {fileID: 0}
 --- !u!4 &1949230321
 Transform:
   m_ObjectHideFlags: 0
