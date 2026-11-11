@@ -144,12 +144,6 @@ public class HeadDisplay : MonoBehaviour
         character.Transform.DOScale(character.BaseScale, speakTweenTime).SetEase(AppearEase);
     }
 
-    private void CharacterDisappears(CharacterReferences character)
-    {
-        character.Transform.DOLocalMove(new Vector3(character.XPosition + character.XAppearOffset, rightImageYPosition, 0), tweenTime)
-            .SetEase(AppearEase);
-        character.Image.DOColor(passiveColor, tweenTime).SetEase(AppearEase);
-    }
 
     [YarnCommand("LeftCharacterDisappears")]
     public void LeftCharacterDisappears()
@@ -163,6 +157,14 @@ public class HeadDisplay : MonoBehaviour
         CharacterDisappears(rightCharacter);
     }
 
+    private void CharacterDisappears(CharacterReferences character)
+    {
+        character.Transform.DOLocalMove(new Vector3(character.XPosition + character.XAppearOffset, rightImageYPosition, 0), tweenTime)
+            .SetEase(AppearEase);
+        character.Image.DOColor(passiveColor, tweenTime).SetEase(AppearEase);
+    }
+
+    /*
     [YarnCommand("switchTalker")]
     public void switchTalker()
     {
@@ -186,5 +188,5 @@ public class HeadDisplay : MonoBehaviour
             imageLeft.DOColor(Color.white, tweenTime).SetEase(AppearEase);
             lastCharacter = leftCharacter;
         }
-    }
+    }*/
 }
