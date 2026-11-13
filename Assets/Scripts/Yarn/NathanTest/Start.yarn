@@ -203,7 +203,9 @@ Monsi : (ok là je vais peut-être un peu loin-)
 Père de Piper : HAH ! Alors dans ce cas je vais t’interroger espèce de petit idiot… si tu réponds correctement, tu pourras emmener Piper à votre sortie de dégénérés.
 <<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
 Monsi : Ah, c’était faci-
-
+//ICI Insérer mini-jeu quizz
+<<LaunchMinigame GameManager "MiniGame_Quizz">>
+<<stop>>
 -> Minijeu gagné
     Père de Piper : Bon… tu n’es pas aussi bête que ce que j’imaginais. 
     <<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
