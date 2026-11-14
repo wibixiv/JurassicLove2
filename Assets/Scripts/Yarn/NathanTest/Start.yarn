@@ -94,7 +94,7 @@ Angel : Tu m'accompagnes ?
 ===
 title: Yandere_Matin_CoursPerspective
 tags: 
-position: -581,-278
+position: -637,-283
 ---
 Monsi décide de se rendre dans les backrooms de l'école. 
 <<FaceUpdate IlluManager "MonsiPantalon" "normal">>
@@ -130,6 +130,8 @@ Yandere : Tu comptes y faire quoi, Monsi ?
     Monsi : Non non, haha… allez à tout de suite !
     <<LeftCharacterDisappears>>
     Bruit de porte qui claque, mini jeu police
+
+    //INSERER MINI JEU POLICE
     -> Gagner le mini jeu
         <<FaceUpdate IlluManager "MonsiPantalon" "heureux">>
         Monsi : Merci beaucoup !!
@@ -156,16 +158,22 @@ Yandere : Tu comptes y faire quoi, Monsi ?
     Yandere : C’est génial ! Viens, je sais où le cacher !
     <<FaceUpdate IlluManager "MonsiPantalon" "triste">>
     Monsi : EUH- ok…?
+    <<jump Secret_Plage>>
 ===
 title: Nerd_Matin_CoursPerspective
 tags: 
-position: 87,-587
+position: 102,-508
 ---
-<<jump EnTravaux>>
+// Faire le dialogue du nerd
+-> Mini jeu réussi 
+    Monsi : YAHOU
+-> Mini jeu échoué
+    Monsi : Oh noOoOoOo
+<<jump Aprem_Plage>>
 ===
 title: Tsundere_Matin_CoursPerspective
 tags: 
-position: 580,-595
+position: 534,-513
 ---
 <<FaceUpdate IlluManager "Tsundere" "enerve">>
 Piper : J’espère que t’es content, tu t’es mis la honte devant tout le monde !
@@ -226,7 +234,7 @@ Monsi : Ah, c’était faci-
     Piper : ...
     *bip*
     Piper : C-c’est pas grave Monsi… au moins tu as essayé. 
-    <<jump EnTravaux>>
+    <<jump Aprem_Plage>>
 ===
 title: Matin_Ruelle
 tags: 
@@ -329,6 +337,7 @@ Hardin : Je vais tous leur faire payer.
 Hardin : Mais d’abord ta sécurité est ma priorité.
 Hardin : Partons pendant que mes sbires les retiennent !
 
+//INSERER LE MINI JEU SQUID GAME
 Mini jeu !
 
 -> Gagner le mini jeu
@@ -440,15 +449,23 @@ Monsi : Hardin...
 Hardin : Zozo n’est pas là cet aprem, la classe va à la plage...
 Hardin : Je t'y conduis ? 
 
-<<jump EnTravaux>>
+<<jump Aprem_Plage>>
 
 ===
-title: EnTravaux
+title: Aprem_Plage
 tags: 
 position: 293,-64
 ---
-Hop là ! Le script de Jurassic Love, Jour 2 n'est pas fini. Au travail Tobias !
+L'épisode spécial plage arrive fort...
 <<backToMenu GameManager>>
 
 ===
+title: Secret_Plage
+tags:
+position: -647,-63
 
+---
+Alors qu'ils vont cacher le cadavre dans les dunes, 
+nos protagonistes entendent la classe qui arrive pour profiter de la plage en l'absence de zozo.
+Que va-t-il se passer ? vous le saurez dans l'épisode spécial plage !
+===
